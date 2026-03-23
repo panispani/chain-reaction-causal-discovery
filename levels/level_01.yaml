@@ -1,0 +1,53 @@
+id: "level_01"
+cell_size: 1.0
+
+layout: |
+  WWWWWWWW
+  W......W
+  W..B...W
+  W......W
+  W......W
+  W......W
+  W.XYZ..W
+  W.RRR..W
+  W....T.W
+  WWWWWWWW
+
+legend:
+  "W":
+    type: wall_tile
+  ".":
+    type: empty
+  "B":
+    type: ball
+    radius: 0.3
+    mass: 1.0
+    elasticity: 0.7
+    initial_velocity: [0, 0]
+  "X":
+    type: domino
+    width: 0.2
+    height: 1.0
+    mass: 0.5
+  "Y":
+    type: domino
+    width: 0.2
+    height: 1.0
+    mass: 0.5
+  "Z":
+    type: domino
+    width: 0.2
+    height: 1.0
+    mass: 0.5
+  "R":
+    type: ramp
+    angle: 30
+    direction: up
+  "T":
+    type: button
+    width: 0.6
+    height: 0.15
+    triggers:
+      - action: open_walls
+        wall_cells:
+          - [1, 4]

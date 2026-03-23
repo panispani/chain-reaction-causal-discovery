@@ -1,0 +1,85 @@
+id: "t0" # super-sequential
+cell_size: 1.0
+
+layout: |
+  WWWWWWWW
+  W......W
+  W@.11#.W
+  WWWWWW.W
+  W......W
+  W#WX22QW
+  WWWWWWWW
+  W......W
+  WR22.YWW
+  WWWWWWWW
+
+solution:
+  edges:
+    # (from, to) with coordinates
+    - [[2, 1], [2, 3]]
+    - [[2, 3], [2, 4]]
+    - [[2, 4], [2, 5]]
+    - [[2, 5], [5, 5]]
+    - [[5, 5], [5, 4]]
+    - [[5, 4], [5, 3]]
+    - [[5, 3], [5, 1]]
+    - [[5, 1], [8, 2]]
+    - [[8, 2], [8, 3]]
+    - [[8, 3], [8, 5]]
+
+settle:
+  - [2, 3]
+
+legend:
+  "W":
+    type: wall_tile
+  ".":
+    type: empty
+  "@":
+    type: ball
+    radius: 0.4 # 0.6
+    mass: 1.5
+    elasticity: 0.8
+    initial_velocity: [1.5, 0]
+  "!":
+    type: ball
+    radius: 0.3
+    mass: 1.0
+    elasticity: 0.6
+    initial_velocity: [0, 0]
+  "#":
+    type: ball
+    radius: 0.4
+    mass: 0.6
+    elasticity: 0.8
+    initial_velocity: [0, 0]
+  "1":
+    type: domino
+    width: 0.20
+    height: 1.4
+    mass: 0.25
+  "2":
+    type: domino
+    width: 0.20
+    height: 1.4
+    mass: 0.5
+  "X":
+    type: button
+    width: 0.6
+    height: 0.15
+    triggers:
+      - action: open_walls
+        wall_cells:
+          - [6, 1]
+  "Y":
+    type: button
+    width: 0.6
+    height: 0.15
+  "R":
+    type: ramp
+    angle: 30
+    direction: down
+  "Q":
+    type: ramp
+    angle: 30
+    direction: up

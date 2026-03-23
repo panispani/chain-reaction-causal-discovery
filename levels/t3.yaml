@@ -1,0 +1,116 @@
+id: "t3"
+cell_size: 1.0
+
+layout: |
+  @WWWWWWWW
+  Z@.....#W
+  WW.....WW
+  WR...W..W
+  W.R.....W
+  W!WXWW..W
+  WWWWRY1QW
+  W...WWWWW
+  WR......W
+  W..2222>W
+  WWWWWWWWW
+
+solution:
+  edges:
+    - [[0, 0], [1, 0]]
+    - [[1, 0], [1, 1]]
+    - [[1, 0], [1, 7]]
+    - [[1, 1], [5, 3]]
+    - [[1, 7], [6, 6]]
+    - [[6, 6], [6, 5]]
+    - [[6, 5], [5, 1]]
+    - [[5, 1], [9, 3]]
+    - [[9, 3], [9, 4]]
+    - [[9, 4], [9, 5]]
+    - [[9, 5], [9, 6]]
+    - [[9, 6], [9, 7]]
+
+settle:
+  - [0, 0]
+
+legend:
+  "W":
+    type: wall_tile
+  ".":
+    type: empty
+  "@":
+    type: ball
+    radius: 0.3
+    mass: 1.0
+    elasticity: 0.6
+    initial_velocity: [0, 0]
+  "!":
+    type: ball
+    radius: 0.3
+    mass: 1.0
+    elasticity: 0.6
+    initial_velocity: [0, 0]
+  "#":
+    type: ball
+    radius: 0.3
+    mass: 1.5
+    elasticity: 0.6
+    initial_velocity: [0, 0]
+  "1":
+    type: domino
+    width: 0.25
+    height: 1.0
+    mass: 0.25
+  "2":
+    type: domino
+    width: 0.20
+    height: 1.25
+    mass: 0.35
+  "X":
+    type: button
+    width: 0.6
+    height: 0.15
+    triggers:
+      - action: open_walls
+        wall_cells:
+          - [4, 6]
+  ">":
+    type: button
+    width: 0.6
+    height: 0.15
+  ")":
+    type: button
+    width: 0.6
+    height: 0.15
+    triggers:
+      - action: open_walls
+        wall_cells:
+          - [8, 6]
+  "%":
+    type: button
+    width: 0.6
+    height: 0.15
+  "Y":
+    type: button
+    width: 0.6
+    height: 0.15
+    triggers:
+      - action: open_walls
+        wall_cells:
+          - [6, 1]
+  "Z":
+    type: button
+    width: 0.6
+    height: 0.15
+    triggers:
+      - action: open_walls
+        wall_cells:
+          - [2, 1]
+          - [2, 7]
+  "R":
+    type: ramp
+    angle: 30
+    direction: down
+  "Q":
+    type: ramp
+    angle: 30
+    direction: up

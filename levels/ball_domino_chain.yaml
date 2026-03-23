@@ -1,0 +1,37 @@
+id: "ball_domino_chain"
+cell_size: 1.0
+
+layout: |
+  WWWWWWWWW
+  W.......W
+  W.B.....W
+  W.......W
+  W.D.D.D.W
+  W.WWWWW.W
+  W.....T.W
+  WWWWWWWWW
+
+legend:
+  "W":
+    type: wall_tile
+  ".":
+    type: empty
+  "B":
+    type: ball
+    radius: 0.3
+    mass: 1.0
+    elasticity: 0.5
+    initial_velocity: [3, 0]
+  "D":
+    type: domino
+    width: 0.2
+    height: 1.0
+    mass: 0.5
+  "T":
+    type: button
+    width: 0.6
+    height: 0.15
+    triggers:
+      - action: open_walls
+        wall_cells:
+          - [1, 4]

@@ -1,0 +1,51 @@
+id: "t1"
+cell_size: 1.0
+
+layout: |
+  WWWWWWWWW
+  W.......W
+  WB......W
+  WR......W
+  W..DD.T.W
+  W.WWWWW.W
+  W.......W
+  WWWWWWWWW
+
+solution:
+  edges:
+    # (from, to) with coordinates
+    - [[2, 1], [4, 3]]
+    - [[4, 3], [4, 4]]
+    - [[4, 4], [4, 6]]
+
+settle:
+  - [2, 1]
+
+legend:
+  "W":
+    type: wall_tile
+  ".":
+    type: empty
+  "B":
+    type: ball
+    radius: 0.3
+    mass: 1.0
+    elasticity: 0.5
+    initial_velocity: [0, 0]
+  "D":
+    type: domino
+    width: 0.2
+    height: 1.0
+    mass: 0.65
+  "T":
+    type: button
+    width: 0.6
+    height: 0.15
+    triggers:
+      - action: open_walls
+        wall_cells:
+          - [0, 0]
+  "R":
+    type: ramp
+    angle: 30
+    direction: down

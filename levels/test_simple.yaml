@@ -1,0 +1,26 @@
+id: "test_simple"
+cell_size: 1.0
+
+layout: |
+  WWWWW
+  W...W
+  W.B.W
+  W.D.W
+  WWWWW
+
+legend:
+  "W":
+    type: wall_tile
+  ".":
+    type: empty
+  "B":
+    type: ball
+    radius: 0.3
+    mass: 1.0
+    elasticity: 0.7
+    initial_velocity: [0, 0]
+  "D":
+    type: domino
+    width: 0.2
+    height: 1.0
+    mass: 0.5

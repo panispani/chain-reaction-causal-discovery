@@ -1,0 +1,83 @@
+id: "t2"
+cell_size: 1.0
+
+layout: |
+  BWWWWWWWW
+  Z.......W
+  WB.....BW
+  WW.....WW
+  WXWB.BWYW
+  WWWWWWWWW
+  W...W...W
+  WDDQW.WWW
+  WWWWW...W
+  WWWWWRDDW
+  WWWWWWWWW
+
+solution:
+  edges:
+    - [[0, 0], [1, 0]]
+    - [[1, 0], [2, 1]]
+    - [[1, 0], [2, 7]]
+    - [[2, 1], [4, 1]]
+    - [[2, 7], [4, 7]]
+    - [[4, 1], [4, 3]]
+    - [[4, 7], [4, 5]]
+    - [[4, 3], [7, 2]]
+    - [[7, 2], [7, 1]]
+    - [[4, 5], [9, 6]]
+    - [[9, 6], [9, 7]]
+
+settle:
+  - [0, 0]
+
+legend:
+  "W":
+    type: wall_tile
+  ".":
+    type: empty
+  "B":
+    type: ball
+    radius: 0.3
+    mass: 1.0
+    elasticity: 0.6
+    initial_velocity: [0, 0]
+  "D":
+    type: domino
+    width: 0.20
+    height: 1.2
+    mass: 0.10
+  "X":
+    type: button
+    width: 0.6
+    height: 0.15
+    triggers:
+      - action: open_walls
+        wall_cells:
+          - [5, 3]
+  "Y":
+    type: button
+    width: 0.6
+    height: 0.15
+    triggers:
+      - action: open_walls
+        wall_cells:
+          - [5, 5]
+  "Z":
+    type: button
+    width: 0.6
+    height: 0.15
+    triggers:
+      - action: open_walls
+        wall_cells:
+          - [3, 1]
+          - [3, 7]
+  "R":
+    type: ramp
+    angle: 30
+    direction: down
+
+  "Q":
+    type: ramp
+    angle: 30
+    direction: up
