@@ -1,5 +1,7 @@
 # [CLeaR 2026] Causal Discovery in Action: Learning Chain-Reaction Mechanisms from Interventions
 
+[![arXiv](https://img.shields.io/badge/arXiv-2603.22620-b31b1b.svg)](https://arxiv.org/abs/2603.22620)
+
 ## Installation
 
 ```bash
@@ -153,3 +155,16 @@ Level breakdown:
 - Intertwined Mechanisms: t3.yaml (difficult, intertwined mechanisms, moving at the same time)
 - Linear Slot-Machine: t4.yaml (slot machine, large number of N, need interventions)
 - Large Slot-Machine: t4_big.yaml (more variables)
+
+## Citation
+
+If you find this work useful, please cite our paper:
+
+```bibtex
+@article{panayiotou2026causal,
+  title={Causal Discovery in Action: Learning Chain-Reaction Mechanisms from Interventions},
+  author={Panayiotou, Panayiotis and {\\c{S}}im{\\c{s}}ek, {\\"O}zg{\\"u}r},
+  journal={arXiv preprint arXiv:2603.22620},
+  year={2026}
+}
+```
